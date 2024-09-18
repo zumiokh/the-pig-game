@@ -1,0 +1,29 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.scorebar {
+  @include flex-center();
+  gap: 1rem;
+  background-color: transparent;
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  padding: 1rem;
+  z-index: 50;
+
+  .card {
+    @include flex-center();
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid $base-white;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .scorebar {
+    display: none;
+  }
+}

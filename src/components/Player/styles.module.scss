@@ -1,0 +1,56 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.player {
+  @include fill-element();
+  @include flex-center();
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #00000030;
+    z-index: 5;
+  }
+
+  .playername {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .score,
+  .score_total {
+    text-align: center;
+    text-transform: uppercase;
+
+    .scoreval {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+}
+
+.hidden_on_shrink {
+  @include flex-center();
+}
+
+input {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $base-black;
+}
+
+@media (max-width: 600px) {
+  .score_total {
+    display: none;
+  }
+
+  .hidden_on_shrink {
+    display: none;
+  }
+}
