@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables";
 
 .popup {
   position: absolute;
@@ -11,7 +11,7 @@
   align-items: center;
 
   .overlay {
-    background-color: $overlay-color;
+    background-color: variables.$overlay-color;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@
     width: 70%;
     max-width: 600px;
     max-height: 500px;
-    background-color: $base-white;
+    background-color: variables.$base-white;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -41,10 +41,10 @@
 
     button {
       background-color: transparent;
-      border: 2px solid $base-black;
+      border: 2px solid variables.$base-black;
 
       &:hover {
-        background-color: $secondary-color;
+        background-color: variables.$secondary-color;
       }
     }
   }

@@ -1,7 +1,7 @@
 import { useGame } from "../../contexts/GameContext.jsx";
 import styles from "./styles.module.scss";
 
-function Player({ player, isActive }) {
+function Player({ player, isActive, color = "transparent" }) {
   const { currentPlayer, currentScore } = useGame();
   const isPlaterActive = currentPlayer === player.id;
 
@@ -10,6 +10,7 @@ function Player({ player, isActive }) {
       className={`${styles.player} ${
         isPlaterActive ? "" : styles.hidden_on_shrink
       }`}
+      style={{ backgroundColor: color }}
     >
       {!isActive && <div className={styles.overlay}></div>}
 

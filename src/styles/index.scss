@@ -1,24 +1,33 @@
-@import "./reset";
-@import "./mixin";
-@import "./variables";
+@use "./reset" as *;
+@use "./mixin";
+@use "./variables";
 
 #root {
-  @include fill-element();
-  @include flex-center();
-  background-color: $base-black;
+  @include mixin.fill-element;
+  @include mixin.flex-center;
+  background-color: variables.$base-black;
   padding: 1rem;
 }
 
 .app {
-  background-color: $primary-color;
-  width: 100%;
-  height: 100%;
+  @include mixin.fill-element;
+  background-color: variables.$primary-color;
+  color: variables.$base-white;
   max-width: 1400px;
   max-height: 700px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  color: $base-white;
   position: relative;
+}
+
+ol {
+  padding-left: 0.5em;
+}
+
+ol li {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-left: 1em;
 }
 
 @media (max-width: 600px) {
